@@ -4,6 +4,6 @@ It is really annoying to accidentally change the light effect by touching the li
 
 ## Gallery
 
-![the locker](./image/img1.png)
+![the locker](./img/img1.png)
 
-![the locker inserted into keyboard](./image/img2.png)
+![the locker inserted into keyboard](./img/img2.png)
