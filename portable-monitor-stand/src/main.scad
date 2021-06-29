@@ -8,7 +8,7 @@ t = 5;  // the screen thickness is 5mm
 b = 25.4;   // 1 inch
 
 union() {
-    rotate([0, 0, 22])
+    rotate([0, 0, 30])
     arm();
     
     body();
