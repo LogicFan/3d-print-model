@@ -2,7 +2,6 @@ use <../lib/sector.scad>
 use <../lib/triangle.scad>
 
 $fn = 64;
-delta = 0.2;
 
 t = 5;  // the screen thickness is 5mm
 
@@ -68,9 +67,9 @@ module body1() {
 }
 
 module arm() {
-    t = 4 - delta;
+    t = 4 - 0.3;
     or = 30;
-    ir = 20 + delta;
+    ir = 20 + 0.2;
 
     translate([-(or+3), -t, 80-or])
     union() {
