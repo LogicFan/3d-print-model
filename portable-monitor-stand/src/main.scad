@@ -15,21 +15,22 @@ union() {
 }
 
 module body() {
+    h = 100;
     difference() {
         body1();
         
         union() {
-            translate([30, -4, 40])
+            translate([30, -4, h-40])
             cube([11, 2, b]);
         
-            translate([30, -3, 40])
+            translate([30, -3, h-40])
             cube([2, 4, b]);
         }
     }
 }
 
 module body1() {
-    h = 80;
+    h = 100;
     w = 40;
 
     t = 2;
@@ -41,7 +42,7 @@ module body1() {
                 translate([9, 0, 0])
                 arc(h, 9, 7, 180, 250);
                 
-                translate([9, 0, 78])
+                translate([9, 0, h-2])
                 sector(2, 9, 180, 250);
             }
             
@@ -49,43 +50,41 @@ module body1() {
             cube([4, 1, h+2], center=false);
         }
             
-        translate([0, 0, 40])
+        translate([0, 0, h-40])
         cube([w, 3, 40], center=false);
         
-        translate([0, 0, 40])
+        translate([0, 0, h-40])
         rotate([270, 0, 0])
         triangle(40, 20, 3);
         
-        cube([10, 3, 40], center=false);
+        cube([10, 3, h-40], center=false);
         
-        translate([6, -8, 78])
+        translate([6, -8, h-2])
         cube([34, 10, 2], center=false);
-        
-        translate([36, -8, 77])
-        cube([4, 1.4, 3], center=false);
     }
 }
 
 module arm() {
+    h = 100;
     t = 4 - 0.3;
     or = 30;
     ir = 20 + 0.2;
 
-    translate([-(or+3), -t, 80-or])
+    translate([-(or+3), -t, h-or])
     union() {
         difference() {
             translate([-10, 0, 0])
             cube([or+10, t, or], center=false);
             
             translate([(or-ir)/2, -1, (or-ir)/2-2])
-            cube([ir, t+2, 100], center=false);
+            cube([ir, t+2, h*2], center=false);
         }
     
-        translate([or, -9+t, -(80-or)])
-        cube([2, 6, 80], center=false);
+        translate([or, -9+t, -(h-or)])
+        cube([2, 6, h], center=false);
 
-        translate([or, -3+t, -(80-or)])
-        cube([3, 3, 80], center=false);
+        translate([or, -3+t, -(h-or)])
+        cube([3, 3, h], center=false);
         
         translate([-10, 0, 0])
         translate([40, 0, 0])
