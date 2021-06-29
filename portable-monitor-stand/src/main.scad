@@ -74,8 +74,8 @@ module arm() {
     union() {
         translate([0, 0, -2])               // adjust for body top 2mm thickness
         difference() {
-            translate([-10, 0, 0])
-            cube([or+10, t, or+2], center=false);
+            translate([-5, 0, -3])
+            cube([or+5, t, or+3+2], center=false);
             
             translate([0.2, 0, 0])          // adjustment, right shift 0.2mm
             translate([(or-ir)/2, -1, (or-ir)/2])
@@ -88,10 +88,10 @@ module arm() {
         translate([or, -3+t, -(h-or)])
         cube([3, 3, h], center=false);
         
-        translate([-10, 0, -2])
-        translate([40, 0, 0])
+        translate([-5, 0, -5])
+        translate([35, 0, 0])
         mirror([1, 0, 0])
         rotate([270, 0, 0])
-        triangle(40, 20, t);
+        triangle(35, 20, t);
     }
 }
